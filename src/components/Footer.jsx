@@ -2,9 +2,11 @@
 
 const Footer = () => {
     return (
-        <div>
-            <h1>footer</h1>
-        </div>
+        <footer className="footer footer-center p-4 bg-base-300 text-base-content">
+            <aside>
+                <p>Copyright © 2023 - Developed  by Md. Adib Arman Shuvro</p>
+            </aside>
+        </footer>
     );
 };
 

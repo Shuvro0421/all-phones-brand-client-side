@@ -1,4 +1,5 @@
 import { AiOutlineArrowRight } from 'react-icons/ai';
+import { Link } from 'react-router-dom';
 
 const Brand = ({ brand }) => {
     const { id, brandName, imageLink } = brand
@@ -7,9 +8,11 @@ const Brand = ({ brand }) => {
             <figure><img src={imageLink} alt={brandName} /></figure>
             <div className="card-body">
                 <h2 className="card-title text-3xl">{brandName}</h2>
-                <div className="card-actions justify-end">
-                    <button className="btn btn-ghost hover:text-rose-500">Visit<AiOutlineArrowRight className='text-xl'></AiOutlineArrowRight> </button>
-                </div>
+                <Link to={`/allProducts/${brandName}`}>
+                    <div className="card-actions justify-end">
+                        <button className="btn btn-ghost hover:text-rose-500">Visit<AiOutlineArrowRight className='text-xl'></AiOutlineArrowRight> </button>
+                    </div>
+                </Link>
             </div>
         </div>
     );

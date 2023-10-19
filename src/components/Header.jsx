@@ -1,13 +1,14 @@
 
 
 import { FcSmartphoneTablet } from 'react-icons/fc';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
 
     const links = <>
-        <li>Home</li>
-        <li>Add Product</li>
-        <li>My Cart</li>
+        <Link to={'/'}><li>Home</li></Link>
+        <Link to={'/addProduct'}><li>Add Product</li></Link>
+        <Link to={'/myCart'}><li>My Cart</li></Link>
     </>
 
     return (
@@ -21,7 +22,7 @@ const Header = () => {
                         {links}
                     </ul>
                 </div>
-                <a className="btn btn-ghost normal-case md:text-xl text-sm pixel">All Phone Brands <FcSmartphoneTablet></FcSmartphoneTablet></a>
+                <Link to={'/'} className="btn btn-ghost normal-case md:text-xl text-sm pixel">All Phone Brands <FcSmartphoneTablet></FcSmartphoneTablet></Link>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu flex items-center justify-center gap-5 menu-horizontal px-1">

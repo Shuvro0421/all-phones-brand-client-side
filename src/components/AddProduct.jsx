@@ -1,4 +1,4 @@
-
+import Swal from 'sweetalert2'
 
 const AddProduct = () => {
     const handleAddProduct = e => {
@@ -26,7 +26,14 @@ const AddProduct = () => {
             .then(res => res.json())
             .then(data => {
                 console.log(data);
-                
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Product Added Successfully!',
+                })
+                form.reset()
+            })
+            .catch(error => {
+                console.log(error)
             })
 
     }
@@ -39,7 +46,8 @@ const AddProduct = () => {
                     <input className="p-2 bg-gray-200 placeholder-slate-500 mt-2 rounded-lg" type="text" name="name" id="" placeholder="product name..." />
 
 
-                    <select className="bg-gray-200 p-2 rounded-lg outline-none" name="brandName">
+                    <select className="bg-gray-200 p-2  rounded-lg" name="brandName">
+                        <option className="" value="brandName" selected>brand name...</option>
                         <option value="Apple">Apple</option>
                         <option value="Samsung">Samsung</option>
                         <option value="Sony">Sony</option>
@@ -48,7 +56,8 @@ const AddProduct = () => {
                         <option value="Xiaomi">Xiaomi</option>
                     </select>
 
-                    <select className="bg-gray-200 p-2 rounded-lg outline-none" name="type">
+                    <select className="bg-gray-200 p-2 rounded-lg" name="type">
+                        <option value="type" selected>electronic type...</option>
                         <option value="phone">Phone</option>
                         <option value="computer">Computer</option>
                         <option value="headphone">Headphone</option>

@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const Brand = ({ brand }) => {
     const { id, brandName, imageLink } = brand
     return (
-        <div className="card  bg-base-100 shadow-xl image-full">
+        <div className="card  bg-base-100 shadow-xl hover:scale-105 ease-in-out duration-100 hover:shadow-2xl image-full">
             <figure><img src={imageLink} alt={brandName} /></figure>
             <div className="card-body">
                 <h2 className="card-title text-3xl">{brandName}</h2>

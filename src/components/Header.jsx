@@ -22,7 +22,7 @@ const Header = () => {
                         {links}
                     </ul>
                 </div>
-                <Link to={'/'} className="btn btn-ghost normal-case md:text-xl text-sm pixel">All Phone Brands <FcSmartphoneTablet></FcSmartphoneTablet></Link>
+                <Link to={'/'} className="btn btn-ghost hover:bg-transparent normal-case md:text-xl text-sm pixel">All Phone Brands <FcSmartphoneTablet></FcSmartphoneTablet></Link>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu flex items-center justify-center gap-5 menu-horizontal px-1">

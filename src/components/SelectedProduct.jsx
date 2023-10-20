@@ -7,7 +7,7 @@ const SelectedProduct = ({ selectedProduct }) => {
 
     return (
         <div className="card bg-base-100 hover:shadow-2xl hover:scale-105 ease-out duration-100">
-            <figure><img src={image} alt={name} /></figure>
+            <figure><img className="w-52" src={image} alt={name} /></figure>
             <div className="card-body">
                 <h2 className="card-title">{name}</h2>
                 <strong>{type}</strong>

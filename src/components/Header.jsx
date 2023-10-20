@@ -1,10 +1,12 @@
 
 
+import { useContext } from 'react';
 import { FcSmartphoneTablet } from 'react-icons/fc';
 import { Link } from 'react-router-dom';
+import { AuthContext } from './AuthProvider';
 
 const Header = () => {
-
+    const { user } = useContext(AuthContext)
     const links = <>
         <Link to={'/'}><li>Home</li></Link>
         <Link to={'/addProduct'}><li>Add Product</li></Link>
@@ -30,7 +32,17 @@ const Header = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <a className="btn hover:text-rose-500 md:text-sm text-xs bg-transparent border-none">Login</a>
+                {
+                    user ?
+                        <div className='flex items-center justify-center gap-2'>
+                            <h1>{user.displayName}</h1>
+                            <img className='w-10 rounded-full' src={user.photoURL} alt="" />
+                            <Link className="btn hover:text-rose-500 md:text-sm text-xs bg-transparent border-none" to={'/login'}>Logout</Link>
+                        </div>
+                        :
+                        <Link className="btn hover:text-rose-500 md:text-sm text-xs bg-transparent border-none" to={'/login'}>Login</Link>
+                }
+
             </div>
         </div>
     );

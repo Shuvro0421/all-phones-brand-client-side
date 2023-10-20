@@ -7,6 +7,10 @@ const ProductDetails = () => {
     const { id } = useParams()
     const [inTheProduct, setInTheProduct] = useState([])
 
+    const handleAddtoCart = () =>{
+
+    }
+
     useEffect(() => {
         fetch(`http://localhost:5000/products/singleProduct/${id}`)
             .then(res => res.json())
@@ -20,7 +24,7 @@ const ProductDetails = () => {
                 <h2 className="card-title">{inTheProduct.name}</h2>
                 <p>{inTheProduct.description}</p>
                 <div className="card-actions justify-end">
-                    <button className="btn btn-ghost hover:text-rose-500">Add to cart</button>
+                   <button onClick={handleAddtoCart} className="btn btn-ghost hover:text-rose-500">Add to cart</button>
                 </div>
             </div>
         </div>

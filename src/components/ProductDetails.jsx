@@ -1,14 +1,33 @@
 import { useState } from "react";
 import { useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useLoaderData, useParams } from "react-router-dom";
+import Swal from 'sweetalert2'
+
 
 
 const ProductDetails = () => {
     const { id } = useParams()
+    const items = useLoaderData()
     const [inTheProduct, setInTheProduct] = useState([])
+    const cardItem = items.find(item => item._id == id)
 
     const handleAddtoCart = () =>{
+        fetch(`http://localhost:5000/cart` , {
+            method : 'POST',
+            headers : {
+                'content-type' : 'application/json'
+            },
+            body : JSON.stringify(cardItem)
+        })
+        .then(res => res.json())
+        .then(data => {
+            console.log(data)
+            Swal.fire({
+                icon: 'success',
+                title: 'Product Added to Cart',
+            })
 
+        })
     }
 
     useEffect(() => {

@@ -27,15 +27,15 @@ const Home = () => {
             </div>
             <div className="p-5 bg-blue-950 text-white md:m-5 m-2 mt-5 rounded-lg shadow-2xl">
                 <h1 className="md:text-6xl text-4xl text-center text-rose-500 font-semibold">Contact us</h1>
-                <div>
+                <div className="text-center">
                     <strong className="text-rose-500 mt-5">Name</strong>
                     <p>Md. Adib Arman Shuvro</p>
                 </div>
-                <div>
+                <div className="text-center">
                     <strong className="text-rose-500 mt-5">E-mail</strong>
                     <p>adibarmanshuvro89@gmail.com</p>
                 </div>
-                <div>
+                <div className="text-center">
                     <strong className="text-rose-500 mt-5">Number</strong>
                     <p>01767739908</p>
                 </div>

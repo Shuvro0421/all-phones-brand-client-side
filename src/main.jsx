@@ -11,6 +11,7 @@ import Home from './components/Home';
 import AddProduct from './components/AddProduct';
 import MyCart from './components/MyCart';
 import AllProducts from './components/AllProducts';
+import ProductDetails from './components/ProductDetails';
 
 
 const router = createBrowserRouter([
@@ -34,6 +35,10 @@ const router = createBrowserRouter([
       {
         path : "/allProducts/:brandName",
         element : <AllProducts></AllProducts>
+      },
+      {
+        path : "/productDetails/:id",
+        element : <ProductDetails></ProductDetails>
       }
     ]
   },

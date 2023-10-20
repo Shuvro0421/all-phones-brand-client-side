@@ -12,7 +12,8 @@ const AddProduct = () => {
         const description = form.description.value
         const rating = form.rating.value
 
-        const products = { image, name, brandName, type, price, description, rating }
+
+        const products = { image, name, brandName, type, price, description, rating, }
         console.log(products)
 
         // send data to the server 
@@ -65,9 +66,9 @@ const AddProduct = () => {
 
                     <input className="p-2 bg-gray-200 placeholder-slate-500 mt-2 rounded-lg" type="text" name="price" id="" placeholder="product price..." />
 
-                    <input className="p-2 bg-gray-200 placeholder-slate-500 mt-2 rounded-lg" type="text" name="description" id="" placeholder="short description..." />
-
                     <input className="p-2 bg-gray-200 placeholder-slate-500 mt-2 rounded-lg" type="text" name="rating" id="" placeholder="rating..." />
+
+                    <textarea className="p-2 bg-gray-200 placeholder-slate-500 mt-2 rounded-lg" type="text" name="description" id="" placeholder="short description..." />
                 </div>
 
 

@@ -1,8 +1,9 @@
+import { Link } from "react-router-dom";
 
 
 const SelectedProduct = ({ selectedProduct }) => {
 
-    const { image, name, brandName, type, price, description, rating } = selectedProduct
+    const { _id , image, name, brandName, type, price, description, rating } = selectedProduct
 
     return (
         <div className="card bg-base-100 hover:shadow-2xl hover:scale-105 ease-out duration-100">
@@ -13,9 +14,8 @@ const SelectedProduct = ({ selectedProduct }) => {
                 <p><strong>Brand : </strong> {brandName}</p>
                 <p><strong>Price : </strong> {price}$</p>
                 <p><strong>Rating : </strong> {rating}/5</p>
-                <p>{description}</p>
                 <div className="card-actions md:justify-end justify-center">
-                    <button className="btn btn-ghost hover:text-rose-500">Show Details</button>
+                    <Link to={`/productDetails/${_id}`}><button className="btn btn-ghost hover:text-rose-500">Show Details</button></Link>
                     <button className="btn btn-ghost hover:text-green-500">Update</button>
                 </div>
             </div>

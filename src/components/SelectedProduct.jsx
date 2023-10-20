@@ -16,7 +16,7 @@ const SelectedProduct = ({ selectedProduct }) => {
                 <p><strong>Rating : </strong> {rating}/5</p>
                 <div className="card-actions md:justify-end justify-center">
                     <Link to={`/productDetails/${_id}`}><button className="btn btn-ghost hover:text-rose-500">Show Details</button></Link>
-                    <button className="btn btn-ghost hover:text-green-500">Update</button>
+                    <Link to={`/updateProducts/${_id}`}><button className="btn btn-ghost hover:text-green-500">Update</button></Link>
                 </div>
             </div>
         </div>

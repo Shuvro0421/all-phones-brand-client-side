@@ -12,7 +12,7 @@ const ProductDetails = () => {
     const cardItem = items.find(item => item._id == id)
 
     const handleAddtoCart = () =>{
-        fetch(`http://localhost:5000/cart` , {
+        fetch(`https://all-phones-brand-server-enxcu13lw-adibs-projects-900c94ef.vercel.app/cart` , {
             method : 'POST',
             headers : {
                 'content-type' : 'application/json'
@@ -31,14 +31,14 @@ const ProductDetails = () => {
     }
 
     useEffect(() => {
-        fetch(`http://localhost:5000/products/singleProduct/${id}`)
+        fetch(`https://all-phones-brand-server-enxcu13lw-adibs-projects-900c94ef.vercel.app/products/singleProduct/${id}`)
             .then(res => res.json())
             .then(data => setInTheProduct(data))
     })
 
     return (
         <div className="card">
-            <figure><img src={inTheProduct.image} alt={inTheProduct.name} /></figure>
+            <figure><img className="w-80" src={inTheProduct.image} alt={inTheProduct.name} /></figure>
             <div className="card-body">
                 <h2 className="card-title">{inTheProduct.name}</h2>
                 <p>{inTheProduct.description}</p>

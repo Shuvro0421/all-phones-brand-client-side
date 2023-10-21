@@ -17,7 +17,7 @@ const AddProduct = () => {
         console.log(products)
 
         // send data to the server 
-        fetch('http://localhost:5000/products', {
+        fetch('https://all-phones-brand-server-enxcu13lw-adibs-projects-900c94ef.vercel.app/products', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',

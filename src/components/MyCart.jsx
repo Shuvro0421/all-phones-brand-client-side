@@ -10,7 +10,7 @@ const MyCart = () => {
     const [carts, setCarts] = useState([])
 
     useEffect(() => {
-        fetch(`http://localhost:5000/cart`)
+        fetch(`https://all-phones-brand-server-enxcu13lw-adibs-projects-900c94ef.vercel.app/cart`)
             .then(res => res.json())
             .then(data => setCarts(data))
     }, [])

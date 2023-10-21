@@ -5,7 +5,7 @@ const Home = () => {
     const [brands, setBrands] = useState([])
 
     useEffect(() => {
-        fetch('http://localhost:5000/brands')
+        fetch('https://all-phones-brand-server-enxcu13lw-adibs-projects-900c94ef.vercel.app/brands')
             .then(res => res.json())
             .then(data => setBrands(data))
     }, [])
@@ -61,7 +61,7 @@ const Home = () => {
             </div>
             {/* reviews */}
             <h1 className="md:text-6xl text-4xl text-center my-3 text-rose-500  pixel">What Our Reviewers Say</h1>
-            <div className="md:m-5 m-2  md:p-5 p-2 rounded-lg border-4 border-rose-500">
+            <div className="md:m-5 m-2  md:p-5 p-2 rounded-lg">
                 <div className="chat chat-start flex flex-col justify-center items-start">
                     <div className="chat-bubble bg-orange-600 text-white">Your Products are brilliant</div>
                     <div><h1 className="text-sm">Naruto Uzumaki</h1></div>

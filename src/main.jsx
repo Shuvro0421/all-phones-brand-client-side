@@ -44,12 +44,12 @@ const router = createBrowserRouter([
       },
       {
         path: "/productDetails/:id",
-        loader : () => fetch('http://localhost:5000/products'),
+        loader : () => fetch('https://all-phones-brand-server-enxcu13lw-adibs-projects-900c94ef.vercel.app/products'),
         element: <PrivateRoute><ProductDetails></ProductDetails></PrivateRoute>
       },
       {
         path: "/updateProducts/:id",
-        loader: ({ params }) => fetch(`http://localhost:5000/products/singleProduct/${params.id}`),
+        loader: ({ params }) => fetch(`https://all-phones-brand-server-enxcu13lw-adibs-projects-900c94ef.vercel.app/products/singleProduct/${params.id}`),
         element: <PrivateRoute><UpdateProducts></UpdateProducts></PrivateRoute>
       },
       {

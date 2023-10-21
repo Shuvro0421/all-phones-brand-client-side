@@ -1,16 +1,32 @@
 
-
 import { useContext } from 'react';
 import { FcSmartphoneTablet } from 'react-icons/fc';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from './AuthProvider';
+import noUser from '../assets/images/no-user-image-icon-3.jpg'
 
 const Header = () => {
-    const { user } = useContext(AuthContext)
+    const { user, logOut } = useContext(AuthContext)
+    const location = useLocation()
+    const navigate = useNavigate()
+
+
+    const handleLogOut = () => {
+        logOut()
+            .then(() => {
+                console.log('logged out')
+                navigate('/login')
+
+            })
+            .catch(error => {
+                console.log(error)
+            })
+    }
+
     const links = <>
-        <Link to={'/'}><li>Home</li></Link>
-        <Link to={'/addProduct'}><li>Add Product</li></Link>
-        <Link to={'/myCart'}><li>My Cart</li></Link>
+        <li><Link to={'/'}>Home</Link></li>
+        <li><Link to={'/addProduct'}>Add Product</Link></li>
+        <li><Link to={'/myCart'}>My Cart</Link></li>
     </>
 
     return (
@@ -34,11 +50,46 @@ const Header = () => {
             <div className="navbar-end">
                 {
                     user ?
-                        <div className='flex items-center justify-center gap-2'>
-                            <h1>{user.displayName}</h1>
-                            <img className='w-10 rounded-full' src={user.photoURL} alt="" />
-                            <Link className="btn hover:text-rose-500 md:text-sm text-xs bg-transparent border-none" to={'/login'}>Logout</Link>
+                        <div>
+                            <div className="md:flex items-center hidden md:gap-2 gap-0">
+                                <div>
+                                    <p className="md:text-base text-xs  text-black text-center">{user.displayName}</p>
+                                </div>
+                                <label tabIndex={0} className="">
+                                    <div className="">
+                                        <img className='w-10 rounded-full' src={user?.photoURL ? user.photoURL : noUser} />
+                                    </div>
+                                </label>
+                                <div>
+                                    <button onClick={handleLogOut} className="btn  normal-case px-10 md:text-base text-xs w-10 md:w-32  hover:text-rose-500">Logout</button>
+                                </div>
+                            </div>
+                            {/* small  */}
+                            <div className="dropdown relative md:hidden">
+                                <label tabIndex={0} className="btn btn-ghost md:hidden">
+                                    <label tabIndex={0} className="">
+                                        <div className="">
+                                            <img className='w-10 rounded-full' src={user?.photoURL ? user.photoURL : noUser} />
+                                        </div>
+                                    </label>
+                                </label>
+                                <ul
+                                    tabIndex={0}
+                                    className="flex flex-col dropdown-content mt-3 z-[1] p-2 pl-2 shadow bg-base-100 bg-opacity-50 rounded-box w-40 absolute right-0 font-semibold"
+                                >
+                                    <div className="flex flex-col items-center justify-center gap-5">
+                                        <p className="text-center  text-xs">{user.displayName}</p>
+                                        <div>
+                                            <button onClick={handleLogOut} className="btn normal-case px-10 md:text-base text-xs w-10 md:w-32 hover:text-rose-500">Logout</button>
+                                        </div>
+                                    </div>
+
+
+                                </ul>
+                            </div>
+
                         </div>
+
                         :
                         <Link className="btn hover:text-rose-500 md:text-sm text-xs bg-transparent border-none" to={'/login'}>Login</Link>
                 }

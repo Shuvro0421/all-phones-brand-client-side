@@ -1,14 +1,21 @@
-
+import { FcGoogle } from 'react-icons/fc';
 import { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "./AuthProvider";
 
 
 
 const Login = () => {
-    const { signInUser } = useContext(AuthContext)
+    const { signInUser , handleGoogleSignIn, user } = useContext(AuthContext)
     const [success, setSuccess] = useState('');
     const [error, setError] = useState('');
+    const navigate = useNavigate()
+    const location = useLocation()
+
+    if (user) {
+        navigate(location?.state ? location.state : '/')
+    }
+
 
     const handleLogin = e => {
         e.preventDefault()
@@ -56,6 +63,14 @@ const Login = () => {
                         <div className="form-control mt-6">
 
                             <input className="btn btn-error normal-case text-white" type="submit" value="Login" />
+                        </div>
+                        <div className="flex items-center my-4">
+                            <div className="border-t border-rose-500 flex-grow"></div>
+                            <div className="mx-4  font-semibold">or</div>
+                            <div className="border-t border-rose-500 flex-grow"></div>
+                        </div>
+                        <div className="form-control">
+                            <button onClick={handleGoogleSignIn} className="btn text-white btn-error normal-case">Google <FcGoogle className="text-3xl"></FcGoogle></button>
                         </div>
                     </form>
                 </div>

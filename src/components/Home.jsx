@@ -17,7 +17,7 @@ const Home = () => {
                 }
             </div>
             <div className="p-5 bg-black text-white md:m-5 m-2 rounded-lg shadow-2xl">
-                <h1 className="md:text-6xl text-4xl text-center text-rose-500 font-semibold">About us</h1>
+                <h1 className="md:text-6xl text-4xl text-center text-rose-500  pixel">About us</h1>
                 <p className="mt-4">We are here to make changes for the product we buy and sell. We are gradually working with the products that are very demandable in day to day life. buy our product with the best value you can get. We provide excellent billing plans and many purchases options. You can set your own product, create a brand and set of to the tech world journey. Reach out to everyone. Make changes , become the person you dreamt for. Buy the latest products, sell the latest products . We give every advantages you can take.</p>
                 <strong className="text-rose-500 mt-5">How it started</strong>
                 <p>We are an online company. We sell products online. Started this business from 2023 and it have been a long run founder of this platform Md. Adib Arman Shuvro. Developed this website</p>
@@ -27,11 +27,11 @@ const Home = () => {
                 <p>By the end of 2023, we are going to launch every single and most updated products in our website. Grossing up millions of dollars by selling the best product you can get and now, this will be more expanded</p>
             </div>
             {/* offer */}
-            <h1 className="md:text-6xl text-4xl text-center my-3 text-rose-500 font-semibold">Deals and More!!</h1>
+            <h1 className="md:text-6xl text-4xl text-center my-3 text-rose-500  pixel">Deals and More!!</h1>
             <div className="carousel w-full">
 
                 <div id="slide1" className="carousel-item relative w-full">
-                    <img  src="https://img.global.news.samsung.com/in/wp-content/uploads/2018/03/PR_926x400_banner2.jpg" className="w-full" />
+                    <img src="https://img.global.news.samsung.com/in/wp-content/uploads/2018/03/PR_926x400_banner2.jpg" className="w-full" />
                     <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
                         <a href="#slide4" className="btn btn-circle btn-ghost hover:text-rose-500">❮</a>
                         <a href="#slide2" className="btn btn-circle btn-ghost hover:text-rose-500">❯</a>
@@ -59,9 +59,35 @@ const Home = () => {
                     </div>
                 </div>
             </div>
+            {/* reviews */}
+            <h1 className="md:text-6xl text-4xl text-center my-3 text-rose-500  pixel">What Our Reviewers Say</h1>
+            <div className="md:m-5 m-2  md:p-5 p-2 rounded-lg border-4 border-rose-500">
+                <div className="chat chat-start flex flex-col justify-center items-start">
+                    <div className="chat-bubble bg-orange-600 text-white">Your Products are brilliant</div>
+                    <div><h1 className="text-sm">Naruto Uzumaki</h1></div>
+                </div>
+                <div className="chat chat-start flex flex-col justify-center items-start">
+                    <div className="chat-bubble bg-yellow-500 text-white">I have never seen as great deal as this one</div>
+                    <div><h1 className="text-sm">Saitma</h1></div>
+                </div>
+                <div className="chat chat-start flex flex-col justify-center items-start">
+                    <div className="chat-bubble bg-green-600">I have been using my laptop for 2 years. Great services I got from this brandt</div>
+                    <div><h1 className="text-sm">Roronoa Zoro</h1></div>
+                </div>
+                
+                <div className="chat chat-end">
+                    <div className="chat chat-start flex flex-col justify-center items-end">
+                    <div className="chat-bubble bg-rose-500 text-white">Thank you for your feedbacks sir, we are looking forward to give you the best product and customer service</div>
+                    <div><h1 className="text-sm">All Phones Brand</h1></div>
+                </div>
+                </div>
+ 
+
+ 
+            </div>
             {/* contact us */}
             <div className="p-5 bg-blue-950 text-white md:m-5 m-2 mt-5 rounded-lg shadow-2xl">
-                <h1 className="md:text-6xl text-4xl text-center text-rose-500 font-semibold">Contact us</h1>
+                <h1 className="md:text-6xl text-4xl text-center text-rose-500 pixel">Contact us</h1>
                 <div className="text-center">
                     <strong className="text-rose-500 mt-5">Name</strong>
                     <p>Md. Adib Arman Shuvro</p>

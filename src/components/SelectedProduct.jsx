@@ -13,7 +13,7 @@ const SelectedProduct = ({ selectedProduct }) => {
                 <strong>{type}</strong>
                 <p><strong>Brand : </strong> {brandName}</p>
                 <p><strong>Price : </strong> {price}$</p>
-                <p><strong>Rating : </strong> {rating}/5</p>
+                <p><strong>Rating : </strong> {rating}/5.00</p>
                 <div className="card-actions md:justify-end justify-center">
                     <Link to={`/productDetails/${_id}`}><button className="btn btn-ghost hover:text-rose-500">Show Details</button></Link>
                     <Link to={`/updateProducts/${_id}`}><button className="btn btn-ghost hover:text-green-500">Update</button></Link>

@@ -4,6 +4,7 @@ import { FcSmartphoneTablet } from 'react-icons/fc';
 import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from './AuthProvider';
 import noUser from '../assets/images/no-user-image-icon-3.jpg'
+import Logo from "../assets/images/logo.png"
 
 const Header = () => {
     const { user, logOut } = useContext(AuthContext)
@@ -63,7 +64,7 @@ const Header = () => {
                         {links}
                     </ul>
                 </div>
-                <Link to={'/'} className="btn btn-ghost hover:bg-transparent normal-case md:text-xl text-sm pixel">All Phone Brands <FcSmartphoneTablet></FcSmartphoneTablet></Link>
+                <Link to={'/'} className="btn btn-ghost hover:bg-transparent normal-case md:text-xl text-sm pixel">All Phone Brands <img className='md:w-7 w-5' src={Logo} alt="" /></Link>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu flex items-center justify-center gap-5 menu-horizontal px-1">

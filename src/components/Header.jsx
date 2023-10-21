@@ -1,13 +1,12 @@
 
 import { useContext } from 'react';
 import { FcSmartphoneTablet } from 'react-icons/fc';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from './AuthProvider';
 import noUser from '../assets/images/no-user-image-icon-3.jpg'
 
 const Header = () => {
     const { user, logOut } = useContext(AuthContext)
-    const location = useLocation()
     const navigate = useNavigate()
 
 

@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "./AuthProvider";
@@ -6,6 +7,8 @@ import { AuthContext } from "./AuthProvider";
 const Register = () => {
 
     const { createUser, updateProfileInfo } = useContext(AuthContext)
+    const [success, setSuccess] = useState('')
+    const [error, setError] = useState('')
 
     const handleRegister = e => {
         e.preventDefault()
@@ -16,10 +19,25 @@ const Register = () => {
         const password = form.password.value
         const user = { name, image, email, password }
         console.log(user)
+        setError('')
+        setSuccess('')
+        if (password.length < 6) {
+            setError('Password should be at least 6 characters')
+            return
+        }
+        else if (!/[A-Z]/.test(password)) {
+            setError('Password should contain 1 uppercase letter')
+            return
+        }
+        else if (!/[!@#$%^&*()_+{}\[\]:;<>,.?~\\/"'`|]/.test(password)) {
+            setError('Password should contain 1 special character')
+            return
+        }
 
         createUser(email, password)
             .then(result => {
                 console.log('registered successfully', result.user)
+                setSuccess('registered successfully!')
                 updateProfileInfo(name, image)
                     .then(() => {
                         console.log("User profile updated successfully");
@@ -27,10 +45,12 @@ const Register = () => {
                     .catch(error => {
                         console.error("Error updating user profile: ", error);
                     });
+
                 form.reset()
             })
             .catch(error => {
                 console.log(error)
+                user ? setError('User already exits') : setError(error)
             })
     }
 
@@ -63,6 +83,8 @@ const Register = () => {
                                 <span className="label-text">Password</span>
                             </label>
                             <input name="password" type="password" placeholder="password" className="input input-bordered" required />
+                            <p className="text-rose-500 font-semibold mt-2">{success}</p>
+                            <p className="text-yellow-500 font-semibold mt-2">{error}</p>
                             <label className="label">
                                 <p>Back to <Link to={'/login'} className="text-rose-500 font-semibold">Login</Link></p>
                             </label>
